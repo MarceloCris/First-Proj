@@ -1,6 +1,4 @@
-
 body {
-  
   /* 
   background-image: url(./assets/bg-mobile.jpg);
   background-repeat: no-repeat;
@@ -8,17 +6,31 @@ body {
   background-size: cover;
    Abaixo versão "SHORT HAND"*/
 
-   background: url(./assets/bg-mobile.jpg) no-repeat top center/cover
+  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+}
+/* Body* é um seletor universal, tudo que inserir nele a pág ira considerar */
+body * {
+  font-family: "Inter", sans-serif;
+  color: white;
 }
 
+/* o seletor (#) é um que puxa do HTML*/
 #container {
   width: 360px;
   border: 1px solid yellow;
   margin: auto;
 }
+/* o alinhamento pode ser feito dentro do seletor de Profile ajustando assim tudo ao centro ou pode ser feito tb dento da caixa de imagem tendo a atenção ao tipo de display.*/
+
+#profile {
+  text-align: center;
+}
 
 #profile img {
   width: 112px;
-  display: block;
-  margin: auto;
+}
+
+#profile p {
+  font-weight: 500px;
+  line-height: 24px;
 }
