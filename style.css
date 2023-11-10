@@ -1,3 +1,12 @@
-h1 {
-  background:solid blue
+
+body {
+  
+  /* 
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+   Abaixo versão "SHORT HAND"*/
+
+   background: url(./assets/bg-mobile.jpg) no-repeat top center/cover
 }
