@@ -13,8 +13,12 @@ body {
 
 #container {
   width: 360px;
-  height: 712px;
   border: 1px solid yellow;
   margin: auto;
-  
+}
+
+#profile img {
+  width: 112px;
+  display: block;
+  margin: auto;
 }
