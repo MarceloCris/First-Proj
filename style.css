@@ -1,3 +1,10 @@
+/* (*) - é um seletor universal,se colocado antes tudo ira ser condirado a partir dele. Nesse caso a para manter as propriedades do tamanho da caixa, foi preciso coloca-lo para depois ajustar. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   /* 
   background-image: url(./assets/bg-mobile.jpg);
