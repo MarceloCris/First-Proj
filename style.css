@@ -21,16 +21,20 @@ body * {
   color: white;
 }
 
-/* o seletor (#) é um que puxa do HTML*/
+/* 1- o seletor (#) é um que puxa do HTML*/
+/* 2- o Margin é calculado de forma horária, pode-se definir as medidas conforme a necessidade.*/
+
 #container {
   width: 360px;
   border: 1px solid yellow;
   margin: auto;
+  margin-top: 56px;
 }
-/* o alinhamento pode ser feito dentro do seletor de Profile ajustando assim tudo ao centro ou pode ser feito tb dento da caixa de imagem tendo a atenção ao tipo de display.*/
-
+/* 1- o alinhamento pode ser feito dentro do seletor de Profile ajustando assim tudo ao centro ou pode ser feito tb dento da caixa de imagem tendo a atenção ao tipo de display.*/
+/* 2- em toda caixa do profile ira considerar esse valor de padding */
 #profile {
   text-align: center;
+  padding: 24px;
 }
 
 #profile img {
