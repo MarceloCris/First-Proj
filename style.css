@@ -51,6 +51,9 @@ body * {
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   
 }
 
@@ -58,10 +61,17 @@ ul {
 
 ul li a{
 
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
+
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.5));
+  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
+
+  /* can I use - coloca a propriedade e verif qual é a melhor forma. Usar o prefixo "webkit" */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
 }
