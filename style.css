@@ -26,7 +26,6 @@ body * {
 
 #container {
   width: 360px;
-  border: 1px solid yellow;
   margin: auto;
   margin-top: 56px;
 }
@@ -44,4 +43,20 @@ body * {
 #profile p {
   font-weight: 500px;
   line-height: 24px;
+}
+
+/* li - ja é um display block, consierara toda extensão conforme ja definido pela caixa "container" que foi a caixa mestra.
+2- DISPLAY FLEX, faz com ele acompanhe as mudanças e encaixe o conteúdo todo conforme direção, seja ROW(inline) seja column(block).assim como tb o GAP que seguirá o mesmo padrão dando espaços dentro das caixas. 
+*/
+
+ul {
+  list-style: none;
+  flex-direction: column;
+  display: flex;
+  gap: 8px;
+}
+
+ul li {
+
+  border: 1px solid red;
 }
