@@ -67,14 +67,23 @@ ul li a{
   padding: 16px 24px;
 
   border-radius: 8px;
-  border: 1px solid var(--stroke-color-dark-mode, rgba(255, 255, 255, 0.5));
-  background: var(--surface-color-dark-mode, rgba(255, 255, 255, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
 
-  /* can I use - coloca a propriedade e verif qual é a melhor forma. Usar o prefixo "webkit" */
+  /* can I use - coloca a propriedade e verif qual é a melhor forma. Usar o prefixo "webkit" obs: mantem ambos no código*/
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
   text-decoration: none;
   font-weight: 500;
+  transition: background 0.2s;
 
 }
+/* pseudo-selector*/
+ul li a:hover {
+
+  border: 1.5px solid white;
+  background: rgba(255, 255, 255, 0.05);
+
+}
+
