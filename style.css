@@ -4,6 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* o "root" representa por padrão o seletor raiz, tudo que se colocar nele ira ser considerado na página.- tb é no root que acontece a troca de background*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg)
+}
+.light {
+  --text-color:black;
+  --bg-url: url(./assets/bg-mobile-light.jpg)
+
+}
 
 body {
   /* 
@@ -13,12 +23,12 @@ body {
   background-size: cover;
    Abaixo versão "SHORT HAND"*/
 
-  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
 }
 /* Body* é um seletor universal, tudo que inserir nele a pág ira considerar */
 body * {
   font-family: "Inter", sans-serif;
-  color: white;
+  color: var(--text-color);
 }
 
 /* 1- o seletor (#) é um que puxa do HTML*/
@@ -78,7 +88,7 @@ ul li a {
 }
 /* pseudo-selector*/
 ul li a:hover {
-  border: 1.5px solid white;
+  border: 1.5px var(--text-color)
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -115,5 +125,4 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
-  
 }
