@@ -12,6 +12,7 @@
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.2);
+  --swtich-bg-url: url(./assets/moon-stars.svg);
 
 }
 .light {
@@ -21,6 +22,7 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
    --highlight-color: rgba(0, 0, 0, 0.1);
+   --swtich-bg-url: url(./assets/sun.svg);
 }
 
 body {
@@ -62,6 +64,19 @@ body * {
   font-weight: 500px;
   line-height: 24px;
 }
+
+/* background tem por padrão colocar várias imagens que precisa ser puxada por URL, logo o "no repeat e centralizar a imagem, pode ser feito tudo em shorthand.*/
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--swtich-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  
+
+
+}
+
 
 /* li - ja é um display block, consierara toda extensão conforme ja definido pela caixa "container" que foi a caixa mestra.
 2- DISPLAY FLEX, faz com ele acompanhe as mudanças e encaixe o conteúdo todo conforme direção, seja ROW(inline) seja column(block).assim como tb o GAP que seguirá o mesmo padrão dando espaços dentro das caixas. 
