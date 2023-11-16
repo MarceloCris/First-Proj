@@ -25,9 +25,11 @@ body * {
 /* 2- o Margin é calculado de forma horária, pode-se definir as medidas conforme a necessidade.*/
 
 #container {
+  
   width: 360px;
-  margin: auto;
-  margin-top: 56px;
+  margin: 56px auto 0px;
+  padding: 0 24px
+
 }
 /* 1- o alinhamento pode ser feito dentro do seletor de Profile ajustando assim tudo ao centro ou pode ser feito tb dento da caixa de imagem tendo a atenção ao tipo de display.*/
 /* 2- em toda caixa do profile ira considerar esse valor de padding */
@@ -54,13 +56,11 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  
 }
 
 /* existem duas formas de alinhar os espaços, usando o padding e tb o gap. */
 
-ul li a{
-
+ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,13 +77,9 @@ ul li a{
   text-decoration: none;
   font-weight: 500;
   transition: background 0.2s;
-
 }
 /* pseudo-selector*/
 ul li a:hover {
-
   border: 1.5px solid white;
   background: rgba(255, 255, 255, 0.05);
-
 }
-
