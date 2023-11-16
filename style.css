@@ -25,11 +25,9 @@ body * {
 /* 2- o Margin é calculado de forma horária, pode-se definir as medidas conforme a necessidade.*/
 
 #container {
-  
   width: 360px;
   margin: 56px auto 0px;
-  padding: 0 24px
-
+  padding: 0 24px;
 }
 /* 1- o alinhamento pode ser feito dentro do seletor de Profile ajustando assim tudo ao centro ou pode ser feito tb dento da caixa de imagem tendo a atenção ao tipo de display.*/
 /* 2- em toda caixa do profile ira considerar esse valor de padding */
@@ -87,13 +85,30 @@ ul li a:hover {
 /* steps - display flex proporciona inserir o GAP e para alinhar usar "Justify".
 - gap/padding/ e o font size regula o tamanho do icone
 -gap - considera os espaços entre eles 16px, acrescentando o espaço entre a logo e a box*/
-
 #social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
 
-   display: flex;
-   justify-content: center;
-   gap: 32px;
-   padding: 24px 0;
-   font-size: 24px;
+/* para deixar todos alinhados de forma exata, é preciso alinhar numa outra caixa.
+padding nessa caixa tira o "pular do hover
+transição 0.2 é padrão
+Border radius nessa caixa evita que transicione fazendo o quadrado*/
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+/* attrib: (a) faz com que o hover fique somente nos ícones separados e não pega a box inteira.
+border radius em 50% fica exato.*/
+#social-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+
   
 }
