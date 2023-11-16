@@ -109,6 +109,11 @@ Border radius nessa caixa evita que transicione fazendo o quadrado*/
 border radius em 50% fica exato.*/
 #social-links a:hover {
   background: rgba(255, 255, 255, 0.2);
+}
 
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
   
 }
