@@ -65,15 +65,27 @@ body * {
   line-height: 24px;
 }
 
+/* o position dessa caixa relativa o position da caixa bottom, então todas posições partirá daqui. */
+#switch {
+  border: 1px solid yellow;
+  position: relative;
+}
+
+
 /* background tem por padrão colocar várias imagens que precisa ser puxada por URL, logo o "no repeat e centralizar a imagem, pode ser feito tudo em shorthand.*/
+/* quando o posicionamento é absoluto ele faz uma sobreposição de camadas e também libera outras propriedades tais como direcionamento na página*/
+/* o Z-index faz o botão subir um andar nas camadas.*/
 #switch button {
   width: 32px;
   height: 32px;
   background: white var(--swtich-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
+  position: absolute; 
+  z-index: 1; 
 }
 
+/* display block, foi necessário para aceitar as propriedades de altura e largura e o Webkit para ser compatível com outros navegadores. */
 #switch span {
 
 display: block;
