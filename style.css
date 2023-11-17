@@ -67,14 +67,18 @@ body * {
 
 /* o position dessa caixa relativa o position da caixa bottom, então todas posições partirá daqui. */
 #switch {
-  border: 1px solid yellow;
+  
   position: relative;
+  width: 64px;
+  margin: 4px auto;
 }
 
 
 /* background tem por padrão colocar várias imagens que precisa ser puxada por URL, logo o "no repeat e centralizar a imagem, pode ser feito tudo em shorthand.*/
 /* quando o posicionamento é absoluto ele faz uma sobreposição de camadas e também libera outras propriedades tais como direcionamento na página*/
-/* o Z-index faz o botão subir um andar nas camadas.*/
+/* o Z-index faz o botão subir um andar nas camadas.
+Essa é a forma de alinhar o Absolute
+translate Y alinha de forma vertical*/
 #switch button {
   width: 32px;
   height: 32px;
@@ -82,7 +86,11 @@ body * {
   border: 0;
   border-radius: 50%;
   position: absolute; 
+  top: 50%;
+  right: 0;
   z-index: 1; 
+  transform: translateY(-50%);
+  
 }
 
 /* display block, foi necessário para aceitar as propriedades de altura e largura e o Webkit para ser compatível com outros navegadores. */
