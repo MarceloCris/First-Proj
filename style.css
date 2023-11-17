@@ -13,16 +13,15 @@
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --swtich-bg-url: url(./assets/moon-stars.svg);
-
 }
 .light {
-  --text-color:black;
+  --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
-   --highlight-color: rgba(0, 0, 0, 0.1);
-   --swtich-bg-url: url(./assets/sun.svg);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --swtich-bg-url: url(./assets/sun.svg);
 }
 
 body {
@@ -31,9 +30,11 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-   Abaixo versão "SHORT HAND"*/
+   Abaixo versão "SHORT HAND"
+   Altura de 100vh faz com que o dispositivo ajuste a qualquer um cobre todo a extensão*/
 
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 /* Body* é um seletor universal, tudo que inserir nele a pág ira considerar */
 body * {
@@ -68,12 +69,10 @@ body * {
 
 /* o position dessa caixa relativa o position da caixa bottom, então todas posições partirá daqui. */
 #switch {
-  
   position: relative;
   width: 64px;
   margin: 4px auto;
 }
-
 
 /* background tem por padrão colocar várias imagens que precisa ser puxada por URL, logo o "no repeat e centralizar a imagem, pode ser feito tudo em shorthand.*/
 /* quando o posicionamento é absoluto ele faz uma sobreposição de camadas e também libera outras propriedades tais como direcionamento na página*/
@@ -86,36 +85,29 @@ translate Y alinha de forma vertical*/
   background: white var(--swtich-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
-  position: absolute; 
+  position: absolute;
   top: 50%;
   left: 0;
-  z-index: 1; 
-  transform: translateY(-50%);  
+  z-index: 1;
+  transform: translateY(-50%);
 }
 
 /* o right é a posição direita no botão e o left indica sua oposição, por isso initial*/
 .light #switch button {
-
   right: 0;
   left: initial;
 }
 
-
 /* display block, foi necessário para aceitar as propriedades de altura e largura e o Webkit para ser compatível com outros navegadores. */
 #switch span {
-
-display: block;
-width: 64px; 
-height: 24px;
-background: var(--surface-color);
-border: 1px solid var(--stroke-color);
-backdrop-filter: blur(4px)
--webkit-backdrop-filter blur(4px);
-border-radius: 9999px;
-
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px) -webkit-backdrop-filter blur(4px);
+  border-radius: 9999px;
 }
-
-
 
 /* li - ja é um display block, consierara toda extensão conforme ja definido pela caixa "container" que foi a caixa mestra.
 2- DISPLAY FLEX, faz com ele acompanhe as mudanças e encaixe o conteúdo todo conforme direção, seja ROW(inline) seja column(block).assim como tb o GAP que seguirá o mesmo padrão dando espaços dentro das caixas. 
@@ -188,4 +180,18 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* @ - é uma regra no CSS. Nesse caso ira considerar as medidas que foram colocadas a partir do minimo.
+"media queries"
+a Media só funciona se houver a linha de Viewport no HTML*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/desktop.dark.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/desktop.light.jpg);
+  }
 }
