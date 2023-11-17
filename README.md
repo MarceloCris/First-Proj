@@ -12,8 +12,18 @@
 
 # Status do Projeto: Concluido.
 
+# Desenvolvimento
+Inicei com a configuração do VSCode e suas extensões. 
+HTML - Inserindo as Tags e toda estrutura.
+CSS - Alternando o desenvolvimento com HTML 
+ASSETS - Pegando os arquivos que ja estavam disponíveis na maquina e também no FIGMA.
+JAVASCRIPT - Após a montagem da página, inserindo o Javascript para concluir. 
+FIGMA - Realização da conta e também extração de alguns arquivos assim como algumas configurações da página.
+GIT e GITHUB - Configuração e abertura da conta e inserindo os passo a passo do projeto. 
+
+
 ````
-Nesse projeto foi utilizado: HTML,CSS e JAVASCRIPT.
+Nesse projeto foi utilizado: HTML,CSS,FIGMA e JAVASCRIPT.
 ````
 
 
