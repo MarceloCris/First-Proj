@@ -90,12 +90,18 @@ translate Y alinha de forma vertical*/
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  animation: slide-back 0.2s;
 }
 
-/* o right é a posição direita no botão e o left indica sua oposição, por isso initial*/
+/* o right é a posição direita no botão e o left indica sua oposição, por isso initial
+animation com a regra final para manter é o "fowards"*/
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
+}
+
+/* propriedade ouline coloca sombra sobre o botão*/
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 /* display block, foi necessário para aceitar as propriedades de altura e largura e o Webkit para ser compatível com outros navegadores. */
@@ -193,5 +199,26 @@ a Media só funciona se houver a linha de Viewport no HTML*/
 
   .light {
     --bg-url: url(./assets/desktop.light.jpg);
+  }
+}
+
+/* animação - passo 1 - criação da regra keyframes
+passo 2 - ir no campo .light #switch button e colocar a regra"animation e o nome criado com os segundos que devera realizar
+para manter o botão no final precisara acrescentar o fowards.*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0%;
   }
 }
