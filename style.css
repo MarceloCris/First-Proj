@@ -87,11 +87,18 @@ translate Y alinha de forma vertical*/
   border-radius: 50%;
   position: absolute; 
   top: 50%;
-  right: 0;
+  left: 0;
   z-index: 1; 
-  transform: translateY(-50%);
-  
+  transform: translateY(-50%);  
 }
+
+/* o right é a posição direita no botão e o left indica sua oposição, por isso initial*/
+.light #switch button {
+
+  right: 0;
+  left: initial;
+}
+
 
 /* display block, foi necessário para aceitar as propriedades de altura e largura e o Webkit para ser compatível com outros navegadores. */
 #switch span {
