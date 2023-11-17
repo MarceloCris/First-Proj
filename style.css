@@ -45,7 +45,8 @@ body * {
 /* 2- o Margin é calculado de forma horária, pode-se definir as medidas conforme a necessidade.*/
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
 }
