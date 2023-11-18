@@ -1,6 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<!-- Adicionar o class, pode ser tanto no html quanto no body-->
+<html lang="pt-br"> 
   <head>
+    <!--entrar no site do google fonts e selecionar a fonte, copiar código e inserir aqui-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +16,83 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- Div é a caixa principal, seletor de ID que pode ter braços como o profile, como no exemplo abaixo, caixa:(display block)-->
+    <div id="container">
+      <div id="profile">
+        <img src="./assets/marcelo-dark.png" alt="" />
 
-  <h1>Iniciando o projeto</h1>
+        <!--tag P para digitar os textos (Display inline) -->
+        <p>@marcelo</p>
+      </div>
+
+
+      <!--Pode ser colocada em outra DIV com ID e o nome, no caso "switch", a tag "button" tem algumas propriedades específicas e a caixa "Span" pode ser utilizada para dar continuidade como uma caixa membro-->
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span></span>
+      </div>
+
+      <!-- tag Ul- lista não ordenada(sem número) c/ OL e LI tag lista. 
+      - criar dentro da <DIV>
+        A-ref
+        - # dentro não leva a lugar algum.
+        - target "_blank" - abre-se outra aba-->
+      <ul>
+        <li>
+          <a href="https://forms.gle/mtW17GMyiVPshozw9" target="_blank"
+            >Responder questionário</a
+          >
+        </li>
+
+        <li>
+          <a href="https://instagram.com/ma_cristopher" target="_blank"
+            >Acesse meu instagram</a
+          >
+        </li>
+
+        <li>
+          <a href="https://linkedin.com/in/MarceloCris" target="_blank"
+            >Acesse meu Linkedin</a
+          >
+        </li>
+
+        <li>
+          <a href="https://rocketseat.com.br" target="_blank"
+            >Entre no site da Rocketseat</a
+          >
+        </li>
+      </ul>
+
+      <!-- Montar outra div com a(#) e o nome da caixa.
+      - Instalar no HTML o link conforme instrução da página e depois puxar no CSS
+      - ION ICONS tem os links e as tags de como puxar boa parte dos icones necessários.-->
+      <div id="social-links">
+        <a href="https://instagram.com/ma_cristopher" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://linkedin.com/in/marcelocris" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="https://youtube.com" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="https://github.com/MarceloCris" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        </div>
+
+        <footer>Feito por Marcelo no site da <a href="https://rocketseat.com.br" target="_blank">Rocketseat</footer>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./script.js"></script>
   </body>
 </html>

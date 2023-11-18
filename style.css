@@ -1,3 +1,224 @@
-h1 {
-  background:solid blue
+/* (*) - é um seletor universal,se colocado antes tudo ira ser condirado a partir dele. Nesse caso a para manter as propriedades do tamanho da caixa, foi preciso coloca-lo para depois ajustar. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* o "root" representa por padrão o seletor raiz, tudo que se colocar nele ira ser considerado na página.- tb é no root que acontece a troca de background*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --swtich-bg-url: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --swtich-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /* 
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+   Abaixo versão "SHORT HAND"
+   Altura de 100vh faz com que o dispositivo ajuste a qualquer um cobre todo a extensão*/
+
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+}
+/* Body* é um seletor universal, tudo que inserir nele a pág ira considerar */
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* 1- o seletor (#) é um que puxa do HTML*/
+/* 2- o Margin é calculado de forma horária, pode-se definir as medidas conforme a necessidade.*/
+
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+/* 1- o alinhamento pode ser feito dentro do seletor de Profile ajustando assim tudo ao centro ou pode ser feito tb dento da caixa de imagem tendo a atenção ao tipo de display.*/
+/* 2- em toda caixa do profile ira considerar esse valor de padding */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500px;
+  line-height: 24px;
+}
+
+/* o position dessa caixa relativa o position da caixa bottom, então todas posições partirá daqui. */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+/* background tem por padrão colocar várias imagens que precisa ser puxada por URL, logo o "no repeat e centralizar a imagem, pode ser feito tudo em shorthand.*/
+/* quando o posicionamento é absoluto ele faz uma sobreposição de camadas e também libera outras propriedades tais como direcionamento na página*/
+/* o Z-index faz o botão subir um andar nas camadas.
+Essa é a forma de alinhar o Absolute
+translate Y alinha de forma vertical*/
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--swtich-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.2s;
+}
+
+/* o right é a posição direita no botão e o left indica sua oposição, por isso initial
+animation com a regra final para manter é o "fowards"*/
+.light #switch button {
+  animation: slide-in 0.2s forwards;
+}
+
+/* propriedade ouline coloca sombra sobre o botão*/
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+/* display block, foi necessário para aceitar as propriedades de altura e largura e o Webkit para ser compatível com outros navegadores. */
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px) -webkit-backdrop-filter blur(4px);
+  border-radius: 9999px;
+}
+
+/* li - ja é um display block, consierara toda extensão conforme ja definido pela caixa "container" que foi a caixa mestra.
+2- DISPLAY FLEX, faz com ele acompanhe as mudanças e encaixe o conteúdo todo conforme direção, seja ROW(inline) seja column(block).assim como tb o GAP que seguirá o mesmo padrão dando espaços dentro das caixas. 
+3 - Padding para alargar a lista e o social links*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+/* existem duas formas de alinhar os espaços, usando o padding e tb o gap. */
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+
+  /* can I use - coloca a propriedade e verif qual é a melhor forma. Usar o prefixo "webkit" obs: mantem ambos no código*/
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+/* pseudo-selector*/
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+/* steps - display flex proporciona inserir o GAP e para alinhar usar "Justify".
+- gap/padding/ e o font size regula o tamanho do icone
+-gap - considera os espaços entre eles 16px, acrescentando o espaço entre a logo e a box*/
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+/* para deixar todos alinhados de forma exata, é preciso alinhar numa outra caixa.
+padding nessa caixa tira o "pular do hover
+transição 0.2 é padrão
+Border radius nessa caixa evita que transicione fazendo o quadrado*/
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+/* attrib: (a) faz com que o hover fique somente nos ícones separados e não pega a box inteira.
+border radius em 50% fica exato.*/
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* @ - é uma regra no CSS. Nesse caso ira considerar as medidas que foram colocadas a partir do minimo.
+"media queries"
+a Media só funciona se houver a linha de Viewport no HTML*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/desktop.dark.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/desktop.light.jpg);
+  }
+}
+
+/* animação - passo 1 - criação da regra keyframes
+passo 2 - ir no campo .light #switch button e colocar a regra"animation e o nome criado com os segundos que devera realizar
+para manter o botão no final precisara acrescentar o fowards.*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0%;
+  }
 }
